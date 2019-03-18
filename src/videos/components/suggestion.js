@@ -6,16 +6,16 @@ function Suggestion ( props ){
     <View style = { styles.container } >
       
       <View style={ styles.left }>
-        <Image style={ styles.cover } source={require('../../../assets/logo.png')}/>
+        <Image style={ styles.cover } source={{uri: props.medium_cover_image}}/>
         <View style={ styles.gener }>
-          <Text style={ styles.generText }>Accion</Text>
+          <Text style={ styles.generText }>{ props.genres[0] }</Text>
         </View>
       </View>
       
       <View style={ styles.right }>
-        <Text style={ styles.title }>Avengers</Text>
-        <Text style={ styles.year }>2012</Text>
-        <Text style={ styles.rating }>5 Estrellas</Text>
+        <Text style={ styles.title }>{ props.title }</Text>
+        <Text style={ styles.year }>{ props.year }</Text>
+        <Text style={ styles.rating }>{ props.rating }</Text>
       </View>
 
     </View>
@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
     fontSize: 11,
   },
   cover: {
-    height: 100,
-    width: 150,
+    height: 150,
+    width: 100,
     resizeMode: 'contain'
   },
   right: {
