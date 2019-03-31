@@ -8,7 +8,7 @@ import Header from './src/sections/components/header';
 import SuggestionList from './src/videos/containers/suggesion-list';
 import CategoryList from './src/videos/containers/category-list';
 import API from './src/utils/api'
-
+import Video from 'expo'
 
 // type Props = {};
 export default class App extends Component{
