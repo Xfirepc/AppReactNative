@@ -22,9 +22,9 @@ function PlayPause (props){
           }}>
       {
         props.paused?
-        <Text style={styles.button}>PLAY</Text>
-        :
         <Text style={styles.button}>PAUSE</Text>
+        :
+        <Text style={styles.button}>PLAY</Text>
       }
       </TouchableHighlight>
   )

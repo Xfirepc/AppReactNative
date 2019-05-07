@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Layout from '../components/movie'
 import Player from '../../player/containers/player'
+import { Text } from 'react-native';
 
 
 import Header from '../../sections/components/header'

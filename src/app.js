@@ -4,10 +4,15 @@ import Home from './screens/containers/home';
 import Header from './sections/components/header';
 import SuggestionList from './videos/containers/suggesion-list';
 import CategoryList from './videos/containers/category-list';
-import { Text } from 'react-native';
 import { connect } from 'react-redux'
 import Movie from './screens/containers/movie'
 
+
+function mapStateToProps(state){
+  return {
+    selectedMovie: state.selectedMovie
+  }
+}
 class AppLayout extends Component {
   async componentDidMount() {
     const categoryList = await API.getMovies()
@@ -26,9 +31,11 @@ class AppLayout extends Component {
     })
   }
   render() {
+    if(this.props.selectedMovie){
+      return <Movie/>
+    }
     return (
-      <Home>
-          <Movie/>
+        <Home>
           <CategoryList/>
           <SuggestionList/>
         </Home>
@@ -36,4 +43,4 @@ class AppLayout extends Component {
   }
 }
 
-export default connect(null)(AppLayout)
+export default connect(mapStateToProps)(AppLayout)
