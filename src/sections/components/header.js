@@ -9,8 +9,8 @@ import {
 
 function Header(props) {
   return (
+    <SafeAreaView>
     <View>
-      <SafeAreaView>
         <View style={styles.container}>
           <Image
             source={require('../../../assets/logo.png')}
@@ -20,8 +20,8 @@ function Header(props) {
             {props.children}
           </View>
         </View>
-      </SafeAreaView>
     </View>
+    </SafeAreaView>
   )
 }
 
