@@ -5,7 +5,7 @@ import { Text } from 'react-native';
 import Close from '../../sections/components/close'
 import  { connect } from 'react-redux'
 import Header from '../../sections/components/header'
-
+import Details from '../../videos/components/details'
 class Movie extends Component {
   closeVideo = () => {
     this.props.dispatch({
@@ -22,10 +22,15 @@ class Movie extends Component {
             <Close onPress={this.closeVideo}/>
           </Header>
         <Player/>
+        <Details {...this.props.movie}/>
       </Layout>
     )
   }
 }
+function mapStateToProps(state){
+  return {
+    movie: state.selectedMovie
+  }
+}
 
-
-export default connect(null)(Movie)
+export default connect(mapStateToProps)(Movie)
