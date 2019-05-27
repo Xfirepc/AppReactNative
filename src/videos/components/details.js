@@ -5,13 +5,13 @@ import {View, Text, StyleSheet, Image, WebView, ScrollView} from 'react-native'
 
 
 function makeHTML(id){
-  return `https://www.youtube.com/embed/${id}"`
+  return `https://www.youtube.com/embed/${id}`
 }
 
 
 function Details (props){
   return (
-  <View>
+  <ScrollView>
     <View style={styles.top}>
       <Text style={styles.title}>{props.title}</Text>
     </View>
@@ -25,17 +25,21 @@ function Details (props){
             {props.description_full}
           </Text>
       </View>
-      <WebView 
-          source={{uri: makeHTML(props.yt_trailer_code)}}
-      />
+      <View style={styles.trailer}>
+        <WebView 
+            source={{uri: makeHTML(props.yt_trailer_code)}}
+        />
+      </View>
     </View>
-  </View>)
+  </ScrollView>)
 }
 
 const styles = StyleSheet.create({
   container: {},
   trailer: {
-    height: 200
+    height: 200,
+    width: '100%'
+    
   },
   details: {
     flexDirection: "row",
@@ -57,7 +61,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   bottom: {
-    padding: 20,
+    padding: 10,
     flex: 1
   },
   description: {

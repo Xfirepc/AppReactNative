@@ -6,7 +6,7 @@ import SuggestionList from './videos/containers/suggesion-list';
 import CategoryList from './videos/containers/category-list';
 import { connect } from 'react-redux'
 import Movie from './screens/containers/movie'
-
+import Search from './sections/components/search'
 
 function mapStateToProps(state){
   return {
@@ -36,7 +36,9 @@ class AppLayout extends Component {
     }
     return (
         <Home>
-          <Header/>
+          <Header>
+          </Header>
+            <Search/>
           <CategoryList/>
           <SuggestionList/>
         </Home>
