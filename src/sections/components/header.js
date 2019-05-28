@@ -9,7 +9,6 @@ import {
 
 function Header(props) {
   return (
-    <SafeAreaView>
     <View>
         <View style={styles.container}>
           <Image
@@ -21,7 +20,6 @@ function Header(props) {
           </View>
         </View>
     </View>
-    </SafeAreaView>
   )
 }
 
